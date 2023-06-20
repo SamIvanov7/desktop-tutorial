@@ -52,7 +52,7 @@
 
                             <!-- Logo -->
                             <div class="card-header py-4 text-center bg-primary">
-                                <a href="index.html">
+                                <a href="{% url 'vertrieb_interface:home' %}">
                                     <span><img src="{% static 'img/JUNO-Solar.png' %}" alt="logo" height="30"></span>
                                 </a>
                             </div>
@@ -83,7 +83,7 @@
 
                         <div class="row mt-3">
                             <div class="col-12 text-center">
-                                <p class="text-muted">Zurück zu <a href="{% url 'invoices:login' %}" class="text-muted ms-1"><b>Einloggen</b></a></p>
+                                <p class="text-muted">Zurück zu <a href="{% url 'vertrieb_interface:login' %}" class="text-muted ms-1"><b>Einloggen</b></a></p>
                             </div> <!-- end col -->
                         </div>
                         <!-- end row -->

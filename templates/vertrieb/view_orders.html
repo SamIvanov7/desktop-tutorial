@@ -84,7 +84,7 @@
                                                         </td>
                                                         <td>
                                                             {% if vertrieb_angebot.is_locked %}
-                                                            <a href="{% url 'vertrieb_interface:create_angebot_pdf' vertrieb_angebot.angebot_id %}" class="btn btn-primary">PDF erstellen</a>
+                                                            <a href="{% url 'vertrieb_interface:create_angebot_pdf_user' vertrieb_angebot.angebot_id %}" class="btn btn-primary">PDF erstellen</a>
                                                             {% endif %}
                                                         </td>
                                                         <td> 

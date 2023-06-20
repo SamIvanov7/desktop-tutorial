@@ -2,7 +2,7 @@
 {% load widget_tweaks %}
 {% load i18n %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 {% block head %}
     <head>
         <meta charset="utf-8" />
@@ -57,12 +57,12 @@
                                     <p class="text-muted mb-4"></p>
                                 </div>
 
-                                <form method="POST" action="{% url 'invoices:login_view' %}">
+                                <form method="POST" action="{% url 'authentication:login' %}">
                                     {% csrf_token %}
 
                                     <div class="mb-3">
                                         <label for="email" class="form-label">E-Mail Adresse</label>
-                                        <input class="form-control" type="email" id="email" name="email" required="" placeholder="Enter your email">
+                                        <input class="form-control" type="email" id="email" name="email" required="" placeholder="E-mail">
 
                                     </div>
 
@@ -70,7 +70,7 @@
                                         
                                         <label for="password" class="form-label">Passwort</label>
                                         <div class="input-group input-group-merge">
-                                            <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password">
+                                            <input type="password" id="password" name="password" class="form-control" placeholder="Passwort">
                                             <div class="input-group-text" data-password="false">
                                                 <span class="password-eye"></span>
                                             </div>
