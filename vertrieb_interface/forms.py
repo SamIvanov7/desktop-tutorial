@@ -654,7 +654,7 @@ class VertriebAngebotForm(ModelForm):
         super(VertriebAngebotForm, self).__init__(*args, **kwargs)
         profile = User.objects.get(zoho_id=user.zoho_id)
 
-        data = json.loads(profile.zoho_data_text)  # type: ignore
+        data = json.loads(profile.zoho_data_text or "")  # type: ignore
         name_list = [(item["name"], item["name"]) for item in data]
         self.fields["name"].choices = name_list
 
