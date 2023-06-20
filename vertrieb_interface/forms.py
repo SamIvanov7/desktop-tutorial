@@ -76,13 +76,13 @@ STORNIERUNGSGRUND_CHOICES = (
 )
 
 
-def get_names_from_string(names_string):
-    names_tuple = ast.literal_eval(names_string)
-    return names_tuple
+# def get_names_from_string(names_string):
+#     names_tuple = ast.literal_eval(names_string)
+#     return names_tuple
 
 
-names_string = get_key(ENV_FILE, "NAMES_CHOICES")
-NAME_CHOICES = get_names_from_string(names_string)
+# names_string = get_key(ENV_FILE, "NAMES_CHOICES")
+# NAME_CHOICES = get_names_from_string(names_string)
 
 
 def validate_two_decimal_places(value):
