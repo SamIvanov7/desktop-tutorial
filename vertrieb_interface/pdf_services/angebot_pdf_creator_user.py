@@ -1101,7 +1101,7 @@ def createOfferPdf(data, vertrieb_angebot, user):
 
     # set path of the PDF
     user_folder = os.path.join(
-        settings.MEDIA_ROOT, f"pdf/usersangebots/{user.username}/"
+        settings.MEDIA_URL, f"pdf/usersangebots/{user.username}/"
     )
     if not os.path.exists(user_folder):
         os.makedirs(user_folder)
