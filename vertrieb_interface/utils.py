@@ -1,7 +1,6 @@
 import random
 from django.db import transaction
 from datetime import datetime
-from django.contrib.auth.models import User
 from vertrieb_interface.models import VertriebAngebot
 
 

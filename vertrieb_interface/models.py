@@ -1,6 +1,5 @@
 from django.db import models
 from authentication.models import User
-from django.db.models import F
 from shared.models import TimeStampMixin
 from django.core.validators import MinValueValidator
 from prices.models import (
@@ -14,8 +13,6 @@ from django.contrib.auth import get_user_model
 import datetime
 from datetime import timedelta
 from math import ceil
-from django.db.models import Q
-from itertools import chain
 from django.core.cache import cache
 from django.core.exceptions import ObjectDoesNotExist
 

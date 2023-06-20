@@ -1,11 +1,5 @@
 from django.apps import AppConfig
 
-from django.contrib.auth import get_user_model
-from dotenv import load_dotenv, find_dotenv, set_key
-import requests
-import json
-import os
-
 
 class VertriebInterfaceConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"

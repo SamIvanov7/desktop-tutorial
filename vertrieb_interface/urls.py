@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, re_path
-from . import views
+from vertrieb_interface import views
 from vertrieb_interface.views import PDFAngebotsListView
 from django.views import defaults as default_views
 

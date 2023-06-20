@@ -1,26 +1,14 @@
-import os
-from tkinter import Label
-from urllib import request
 from django import forms
-from django.forms import DateField, ModelForm
-from django.core.validators import MinValueValidator
+from django.forms import ModelForm
 from config.settings import ENV_FILE
-from prices import models
 import ast
-from django.forms.widgets import NumberInput
 from .models import VertriebAngebot
 from django.core.exceptions import ValidationError
 import decimal
-from django.forms.utils import ErrorList
-from django.forms import TextInput
 import ast
-from dotenv import load_dotenv, find_dotenv, get_key
+from dotenv import load_dotenv, get_key
 from django.utils import timezone
-from django.db.models.signals import pre_save
-from django.dispatch import receiver
 from django.utils import timezone
-from config.settings import ENV_FILE
-import requests
 import json
 from django.contrib.auth import get_user_model
 load_dotenv(ENV_FILE)

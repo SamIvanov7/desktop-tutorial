@@ -1,7 +1,4 @@
 import os
-import platform
-import traceback
-import matplotlib.pyplot as plt
 from config import settings
 from matplotlib.figure import Figure
 from datetime import date
