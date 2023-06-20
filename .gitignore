@@ -1,0 +1,20 @@
+.DS_Store
+# Editors
+.vscode/
+
+# Python stuff
+
+__pycache__/
+
+# other
+history.json
+
+#sqLite
+db.sqlite3
+*.pyc
+*.sql
+
+.env
+.env.default
+setup.cfg
+staticfiles/
