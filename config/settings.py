@@ -10,7 +10,6 @@ ENV_FILE = find_dotenv()
 
 load_dotenv(ENV_FILE)
 
-
 ZOHO_ACCESS_TOKEN = os.getenv("ZOHO_ACCESS_TOKEN")
 ZOHO_CLIENT_ID = os.getenv("ZOHO_CLIENT_ID")
 ZOHO_CLIENT_SECRET = os.getenv("ZOHO_CLIENT_SECRET")
@@ -31,7 +30,8 @@ LOGGING = {
         },
     },
 }
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+# ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+ALLOWED_HOSTS = ['*']
 DEVELOPMENT_MODE = False
 
 LOGIN_URL = "/login"
@@ -65,7 +65,7 @@ SERVICE_APPS = [
     "schema_graph",
     "crispy_forms",
     "shared",
-    "dj_database_url",
+
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + SERVICE_APPS
