@@ -3,7 +3,6 @@ from django.urls import reverse
 import logging
 import json, os
 from django.db import IntegrityError
-from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import user_passes_test
 from django.views.decorators.csrf import csrf_exempt
 from django.http import Http404, HttpResponseRedirect, JsonResponse
@@ -28,20 +27,17 @@ from invoices.forms import (
     ZahlerKabelForm,
 )
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.views.decorators.csrf import csrf_protect
+
 from invoices.models import ElectricInvoice, KundenData, Position
 from authentication.models import User
 from django.core.exceptions import PermissionDenied
 from invoices import excel_generator, pdf_creator2
 from shared.chat_bot import handle_message
-from django.contrib import messages
-from django.db.models.functions import Cast
-from django.db.models import IntegerField, Q, CharField
-from django.views.decorators.csrf import requires_csrf_token
+
+from django.db.models import Q
 
 logger = logging.getLogger(__name__)
-from django.views.defaults import permission_denied
-from django.views.defaults import server_error
+
 
 
 # User's profession check decorators

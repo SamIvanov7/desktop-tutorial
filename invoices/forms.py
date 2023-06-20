@@ -1,6 +1,3 @@
-from email.policy import default
-from turtle import position
-
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 
