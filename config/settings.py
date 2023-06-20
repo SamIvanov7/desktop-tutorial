@@ -32,7 +32,7 @@ LOGGING = {
     },
 }
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
-DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
+DEVELOPMENT_MODE = False
 
 LOGIN_URL = "/login"
 
@@ -65,6 +65,7 @@ SERVICE_APPS = [
     "schema_graph",
     "crispy_forms",
     "shared",
+    "dj_database_url",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + SERVICE_APPS
@@ -95,29 +96,30 @@ WSGI_APPLICATION = "config.wsgi.application"
 #         "NAME": BASE_DIR / "db.sqlite3",
 #     }
 # }
-if DEVELOPMENT_MODE is True:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-        }
-    }
-elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
-    if os.getenv("DATABASE_URL", None) is None:
-        raise Exception("DATABASE_URL environment variable not defined")
-    DATABASES = {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
-    }
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": os.getenv("POSTGRES_DB", default="support_2"),
-#         "USER": os.getenv("POSTGRES_USER", default="support_1"),
-#         "PASSWORD": os.getenv("POSTGRES_PASSWORD", default="support1234"),
-#         "HOST": os.getenv("POSTGRES_HOST", default="localhost"),
-#         "PORT": int(os.getenv("POSTGRES_PORT", default="5433")),
+# if DEVELOPMENT_MODE is True:
+#     DATABASES = {
+#         "default": {
+#             "ENGINE": "django.db.backends.sqlite3",
+#             "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+#         }
 #     }
-# }
+# elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
+#     if os.getenv("DATABASE_URL", None) is None:
+#         raise Exception("DATABASE_URL environment variable not defined")
+#     DATABASES = {
+#         "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
+#     }
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.getenv("POSTGRES_DB", default="support_2"),
+        "USER": os.getenv("POSTGRES_USER", default="support_1"),
+        "PASSWORD": os.getenv("POSTGRES_PASSWORD", default="support1234"),
+        "HOST": os.getenv("POSTGRES_HOST", default="localhost"),
+        "PORT": int(os.getenv("POSTGRES_PORT", default="5432")),
+    }
+}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
