@@ -5,11 +5,11 @@ import os
 # import sys
 # import dj_database_url
 from django.core.management.utils import get_random_secret_key
-BASE_DIR = Path(__file__).resolve().parent.parent
-ENV_FILE = find_dotenv()
 
+ENV_FILE = find_dotenv()
 load_dotenv(ENV_FILE)
 
+BASE_DIR = Path(__file__).resolve().parent.parent
 ZOHO_ACCESS_TOKEN = os.getenv("ZOHO_ACCESS_TOKEN")
 ZOHO_CLIENT_ID = os.getenv("ZOHO_CLIENT_ID")
 ZOHO_CLIENT_SECRET = os.getenv("ZOHO_CLIENT_SECRET")
