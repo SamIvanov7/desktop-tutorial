@@ -2,8 +2,6 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv, find_dotenv
 import os
-# import sys
-# import dj_database_url
 from django.core.management.utils import get_random_secret_key
 
 ENV_FILE = find_dotenv()
